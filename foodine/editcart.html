@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> <!-- Reuse the same CSS -->
+  <title>Edit Cart - Foodine</title>
+
+  <style>
+    /* Main page body */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Background image just below the cart box */
+    .background-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100vh;
+      background: url('https://png.pngtree.com/background/20230528/original/pngtree-variety-of-indian-food-is-served-on-a-table-picture-image_2778395.jpg') no-repeat center center/cover;
+      z-index: 0;
+      filter: blur(2px);
+    }
+
+    /* Cart container with semi-transparent background */
+    .cart-container {
+      max-width: 800px;
+      background-color: rgb(248, 248, 248);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.801);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cart-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ff0000;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Cart table */
+    .cart-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .cart-table th, .cart-table td {
+      padding: 15px;
+      text-align: left;
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+    }
+
+    .cart-table th {
+      background-color: #ff2600;
+      color: white;
+      font-weight: 700;
+    }
+
+    .cart-table td {
+      border-bottom: 1px solid #ccc;
+      font-weight: 400;
+    }
+
+    .quantity-input {
+      width: 50px;
+      text-align: center;
+    }
+
+    .cart-actions button {
+      background-color: #ff2600;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .cart-actions button:hover {
+      background-color: #e5534b;
+    }
+
+    /* Total Price Section */
+    .cart-summary {
+      text-align: right;
+      font-size: 1.2rem;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    .cart-summary span {
+      color: #ff2600;
+    }
+
+    /* Order Now button */
+    .order-now-btn {
+      display: block;
+      margin: 30px auto 0 auto;
+      padding: 10px 20px;
+      background-color: #ff2600;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      max-width: 300px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease;
+    }
+
+    .order-now-btn:hover {
+      background-color: #e5534b;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background Image (below the cart) -->
+  <div class="background-image"></div>
+
+  <!-- Cart Container -->
+  <div class="cart-container">
+    <h2>Your Cart</h2>
+    <table class="cart-table" id="cartTable">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cart items will be dynamically inserted here -->
+      </tbody>
+    </table>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+      Total: ₹<span id="totalPrice">0</span>
+    </div>
+
+    <!-- Order Now Button -->
+    <button class="order-now-btn">Order Now</button>
+  </div>
+ 
+  <script src="editcart.js"></script>
+</body>
+</html>

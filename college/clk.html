@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock with Buttons</title>
+</head>
+<body>
+
+<button id="hourBtn"></button>
+<button id="minuteBtn"></button>
+<button id="secondBtn"></button>
+
+<script>
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes();
+    var seconds = now.getSeconds();
+
+    // Add leading zeros if needed
+    if (hours < 10) {
+        hours = '0' + hours;
+    }
+    if (minutes < 10) {
+        minutes = '0' + minutes;
+    }
+    if (seconds < 10) {
+        seconds = '0' + seconds;
+    }
+
+    // Set the button text
+    document.getElementById('hourBtn').textContent = hours;
+    document.getElementById('minuteBtn').textContent = minutes;
+    document.getElementById('secondBtn').textContent = seconds;
+</script>
+
+</body>
+</html>

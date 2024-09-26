@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Foodine</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="payment.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .payment-container {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+            color: #ff2600;
+        }
+        h3 {
+            text-align: center;
+            margin: 15px 0;
+        }
+        button, .payment-button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        .payment-button {
+            background-color: #f1f1f1;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .payment-button img {
+            width: 30px;
+            margin-right: 10px;
+        }
+        .payment-button:hover {
+            background-color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-container">
+        <h2>Payment</h2>
+        <h3>Pay to:</h3>
+        <p style="text-align: center; font-weight: bold;">+91 12345 67890</p> <!-- Replace with your mobile number -->
+        
+        <h3>Or pay with</h3>
+        <a href="https://pay.google.com/gp/p/checkout?phone=+917592941085" target="_blank" class="payment-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0a/Google_Pay_logo.svg" alt="Google Pay"> Google Pay
+        </a>
+        <a href="https://paytm.com/payment?mobile=7592941085" target="_blank" class="payment-button">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Paytm_logo.png" alt="Paytm"> Paytm
+        </a>
+        <a href="https://www.phonepe.com/payment?mobile=+917592941085" target="_blank" class="payment-button">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e6/PhonePe_logo.png" alt="PhonePe"> PhonePe
+        </a>
+    </div>
+
+</body>
+</html>

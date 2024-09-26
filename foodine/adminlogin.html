@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+    <title>Admin Login - Foodine</title>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav id="navbar">
+            <div class="logo">Foodine</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#order">Order</a></li>
+                <li><a href="adminlogin.html" class="active">Admin Login</a></li> <!-- Highlighted Admin Login -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Admin Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <h2>Admin Login</h2>
+            <form id="loginForm">
+                <label for="username">Admin ID</label>
+                <input type="text" id="username" placeholder="Enter Admin ID" required>
+                
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="Enter Password" required>
+                
+                <input type="submit" class="login-btn" value="Login">
+                <div id="errorMessage" class="error"></div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <h2>FOODINE</h2>
+            <div class="social-media">
+                <a href="https://www.facebook.com/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.twitter.com/" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/deekshith2912/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="./policy.html">Policies</a> |
+                <a href="./terms_of_service.html">Terms of Service</a> |
+                <a href="./contactus.html">Contact Us</a>
+            </div>
+            <p>&copy; 2024 Foodine. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Login Validation Script -->
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorMessage = document.getElementById("errorMessage");
+
+            // Simple validation for admin login
+            if (username === "admin" && password === "admin123") {
+                window.location.href = "admin.html";
+            } else {
+                errorMessage.textContent = "Incorrect Admin ID or Password.";
+            }
+        });
+    </script>
+</body>
+</html>

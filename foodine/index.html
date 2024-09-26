@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <title>Foodine</title>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <header>
+    <nav id="navbar">
+      <div class="logo">Foodine</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="adminlogin.html">Admin Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Section -->
+  <section id="home">
+    <div class="home-content">
+      <h1>Welcome to Foodine</h1>
+      <p>Experience the ultimate convenience with our pre-order system! Choose and book your meals in advance, ensuring you get exactly what you want without the wait.</p>
+
+      <!-- Login Form -->
+      <div class="login-form">
+        <h3>Login</h3>
+        <form id="loginForm" aria-labelledby="login">
+          <input type="email" id="email" placeholder="Enter your email" required aria-required="true">
+          <input type="password" id="password" placeholder="Enter your password" required aria-required="true">
+          <button type="submit" aria-label="Login to your account">Login</button>
+        </form>
+        <p id="login-error-message" style="color: rgb(255, 0, 0);"></p>
+        <p>Don't have an account?</p>
+          <p><a href="register.html" class="btn">Register</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h1>About Us</h1>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Our mission is to provide the best dining experience with a convenient pre-order system. Enjoy hassle-free meals that fit your busy schedule.</p>
+        <button class="btn"><a href="#">LEARN MORE</a></button>
+      </div>
+      <div class="about-image">
+        <img src="hjj.png" alt="Chef">
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Section -->
+  <section id="order">
+    <h1>Order Now</h1>
+    <p>Use our easy-to-use ordering system to quickly place your order and enjoy your favorite meals without the wait.</p>
+    <!-- Add order form or details here -->
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h2>FOODINE</h2>
+      <div class="social-media">
+        <a href="https://www.facebook.com/" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com/" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/deekshith2912/" target="_blank" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      </div>
+      <div class="footer-links">
+        <a href="./policy.html">Policies</a> |
+        <a href="./terms_of_service.html">Terms of Service</a> |
+        <a href="./contactus.html">Contact Us</a>
+      </div>
+      <p>&copy; 2024 Foodine. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/9f6e489cf7.js" crossorigin="anonymous"></script>
+  <script src="./scripts.js"></script>
+
+  <!-- Login JavaScript -->
+  <script>
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  const errorMessage = document.getElementById('login-error-message');
+
+  try {
+    const response = await fetch('http://localhost:5000/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      alert(data.message);
+      window.location.href = "menu.html";  // Redirect after login
+    } else {
+      errorMessage.textContent = data.message;
+    }
+  } catch (error) {
+    errorMessage.textContent = "An error occurred. Please try again.";
+  }
+});
+
+
+
+    // Navigation fade-out effect on scroll
+    let lastScrollTop = 0;
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', function() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > lastScrollTop && scrollTop > navbar.offsetHeight) {
+        navbar.style.opacity = '0'; // Fade out
+      } else {
+        navbar.style.opacity = '1'; // Fade in
+      }
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For Mobile or negative scrolling
+    });
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,23 @@
+body{
+    background-image: url("foodine.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    color: wheat;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+.nav{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    justify-content: space-between;
+    color: white;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form Validation</title>
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+            var genderMale = document.getElementById("male").checked;
+            var genderFemale = document.getElementById("female").checked;
+
+            // Check if any field is empty
+            if (name === "" || password === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            // Check password length
+            if (password.length < 7) {
+                alert("Password must be at least 7 characters long");
+                return false;
+            }
+
+            // Check if gender is selected
+            if (!genderMale && !genderFemale)
+	   {
+                alert("Please select a gender");
+                return false;
+            }
+
+            alert("Form submitted successfully!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Registration Form</h2>
+    <form onsubmit="return validateForm()">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <label>Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>

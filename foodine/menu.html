@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="menu.css"> <!-- Reuse the same CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+  <title>Menu - Foodine</title>
+</head>
+<body>
+
+  <!-- Navbar Section -->
+  <header>
+    <nav id="navbar">
+      <div class="logo">Foodine</div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order">Order</a></li>
+        <li><a href="adminlogin.html">Admin Login</a></li>
+        <li>
+          <!-- User Icon with Email and Logout -->
+          <div class="user-info">
+            <i class="fas fa-user user-icon"></i>
+            <div class="dropdown-content">
+              <div class="user-email" id="userEmailDisplay">User Email</div>
+                  <a href="#">Profile</a>
+              <a href="#" id="logout">Logout</a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Menu Section -->
+  <section id="menu">
+    <h1>Menu</h1>
+    <div class="cards">
+      <!-- Dynamic menu items will be rendered here -->
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <h2>FOODINE</h2>
+      <div class="social-media">
+        <a href="https://www.facebook.com/" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.twitter.com/" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/deekshith2912/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+      </div>
+
+      <div class="footer-links">
+        <a href="./policy.html">Policies</a> |
+        <a href="./terms_of_service.html">Terms of Service</a> |
+        <a href="./contactus.html">Contact Us</a>
+      </div>
+      <p>&copy; 2024 Foodine. All rights reserved.</p>
+    </div>
+  </footer>
+
+<!-- Floating Cart Box -->
+<div id="floatingCart">
+  <button id="editCart" style="margin-top: 10px; background-color: #ff0000; color: white; border: none; border-radius: 5px; padding: 10px 15px; cursor: pointer; font-weight: bold; font-family: 'Arial', sans-serif; font-size: 16px;">
+    🛒 Click for Cart: <span id="cartCount">0</span> items
+  </button>
+</div>
+
+
+  <!-- Cart Modal -->
+  <div id="cartModal">
+    <div id="cartModalContent"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://kit.fontawesome.com/9f6e489cf7.js" crossorigin="anonymous"></script>
+  <script src="menu.js"></script>
+  <script>
+    // Display the user's email from localStorage
+    const storedEmail = localStorage.getItem('userEmail');
+    if (storedEmail) {
+      document.getElementById('userEmailDisplay').textContent = storedEmail;
+    }
+
+    // Logout functionality
+    document.getElementById('logout').addEventListener('click', function() {
+      localStorage.removeItem('userEmail');
+      localStorage.removeItem('userPassword');
+      window.location.href = 'index.html';  // Redirect to the login page
+    });
+  </script>
+</body>
+</html>

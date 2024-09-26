@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #0d1b2a;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0d1b2a;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.navbar nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin-right: 20px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+}
+
+.navbar .account {
+    font-size: 16px;
+}
+
+.hero-section {
+    height: 80vh;
+    background-image: url('hero-image.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-section .scroll-down {
+    font-size: 18px;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.content-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.content-item .number {
+    font-size: 72px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    margin-right: 20px;
+}
+
+.content-item h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content-item p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.content-item .read-more {
+    font-size: 16px;
+    text-decoration: none;
+    color: #f4a261;
+}
+
+.content-item img {
+    margin-left: 20px;
+    width: 250px;
+    height: auto;
+}

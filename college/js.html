@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>registration form</title>
+<script>
+function Myform()
+{
+var x=document.getElementById("name").value;
+var y=document.getElementById("pass").value;
+var x1=document.getElementById("male").checked;
+var y1=document.getElementById("female").checked;
+
+if(x===""|| y==="")
+{
+alert("fill al fields");
+return false;
+}
+
+if(y.length<7)
+{
+alert("low");
+return false;
+}
+if(!x1&&!y1)
+{
+alert("choose");
+return false;
+}
+else
+{
+alert("success login");
+return true;
+}
+
+}
+</script>
+</head>
+<body>
+<form onsubmit="return Myform()">
+<label for="Name">Name:</label>
+<input type="text" id="name" name="name"><br>
+
+<label for="password">password:</label>
+<input type="password" id="pass" name="password"><br>
+
+<label for="gender">gender:</label>
+
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">male</label>
+
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">female</label><br>
+
+<input type="submit" value="register">
+
+</form>
+</body>
+</html>

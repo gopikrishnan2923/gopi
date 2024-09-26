@@ -1,0 +1,225 @@
+/* General Styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Floating Cart Box Styling */
+#floatingCart {
+  
+    padding: 0px 0px; /* Increased padding for bigger size */
+    color: white;
+    border-radius: 10px; /* Slightly larger border radius */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow for more emphasis */
+    font-weight: bold;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem; /* Larger font size */
+}
+
+#floatingCart button {
+    background: none;
+    border: none;
+    margin-left: 20px; /* Increase spacing between text and icon */
+    cursor: pointer;
+}
+
+#floatingCart button i {
+    font-size: 1.8rem; /* Increased icon size */
+    color: white;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#floatingCart button:hover i {
+    transform: scale(1.3); /* Make the icon larger on hover */
+    color: #ffe600; /* Slightly lighter color on hover */
+}
+
+/* Navbar Section */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: black; /* Black background for the navbar */
+}
+
+#navbar .logo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+#navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+#navbar ul li {
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: white; /* White text color for links */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#navbar ul li a:hover {
+    color: #ff2600; /* Change color on hover */
+}
+
+/* User icon and dropdown styles */
+.user-info {
+    position: relative;
+    display: inline-block;
+}
+
+.user-info .user-icon {
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.user-info .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 150px;
+    right: 0;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.user-info:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black; /* Black text color for dropdown links */
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Background color on hover */
+}
+
+.user-email {
+    padding: 10px;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Menu Section */
+#menu {
+    padding: 80px 40px; /* Adjust for fixed navbar */
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Additional styles remain unchanged... */
+
+/* Footer Section */
+footer {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.footer-content h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+/* Cards for menu items */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-details {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-details h5 {
+    font-size: 1.2rem;
+}
+
+.card-details p {
+    color: #666;
+}
+
+.card-details button {
+    padding: 10px;
+    border: none;
+    background-color: #ff2600;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.card-details button:hover {
+    background-color: #e5534b;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}

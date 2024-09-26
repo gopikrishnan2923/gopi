@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - Foodine</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <h1>Admin Panel - Manage Menu</h1>
+
+  <!-- Form for adding or editing menu items -->
+  <form id="menuForm">
+    <input type="hidden" id="itemIndex" value="">
+    <label for="name">Food Name:</label>
+    <input type="text" id="name" required>
+    <br>
+
+    <label for="description">Description:</label>
+    <input type="text" id="description" required>
+    <br>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" required>
+    <br>
+
+    <label for="isVeg">Is Veg:</label>
+    <input type="checkbox" id="isVeg">
+    <br>
+
+    <label for="image">Image URL:</label>
+    <input type="url" id="image" required>
+    <br>
+
+    <button type="button" onclick="saveMenuItem()">Save Item</button>
+  </form>
+
+  <h2>Menu Items</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Veg/Non-Veg</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody id="menuTable">
+      <!-- Menu items will be dynamically rendered here -->
+    </tbody>
+  </table>
+
+  <!-- Load admin.js to handle the menu functionality -->
+  <script src="admin.js"></script>
+</body>
+</html>
